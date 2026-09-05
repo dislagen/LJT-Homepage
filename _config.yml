@@ -1,241 +1,245 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your entire site, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# `jekyll serve -l -H localhost`. If you change this file, please restart the 
-# server process.
+---
+---
 
-# Basic Site Settings
-locale                   : "en-US"
-site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title                    : "Your Name / Site Title"
-title_separator          : "-"
-name                     : &name "Your Name"
-description              : &description "Your Name's academic portfolio"   # Update this with a general description of your site, this is the default if not overridden by a page
-url                      : https://academicpages.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
-                                                           # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
-baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "academicpages/academicpages.github.io"
+# Build settings for local preview and the generation of the site
+# Set Which Environment to use
+# This is set in the config file so that it can be overridden by the CLI/ENV Variables
+environment: development
+#environment: production
 
-# Site Author - The following control what appear as part of the author content on the side bar.
-#               If a field is blank the icon and link will not appear, otherwise it will be shown.
-#               Additional customization can be done by editing /_includes/author-profile.html
-author:
-  # Biographic information
-  avatar           : "profile.png"
-  name             : "Your Sidebar Name"
-  pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
-  uri              : # URL
-  email            : "none@example.org" 
+# This is the title of your website
+# The `title` is the main name of your site, used in the nav bar and as the title of the site
+title: Junteng Liu
+# The `description` is the default description that is used in the meta tags
+description: Junteng Liu's Homepage
+# These are the keywords that are used in the meta tags
+# It is recommended to use no more than 20 keywords
+keywords: Junteng Liu, NLP, machine learning, LLM
+# The `favicon` is the path to the favicon in the assets/images/ directory
+favicon: false
+# The `logo` is the path to the logo in the assets/images/ directory
+#logo: assets/images/avatar.png
+# The `mobile_logo` is the path to the mobile logo in the assets/images/ directory
+#mobile_logo: assets/images/mobile_logo.png
 
-  # Academic websites
-  academia         : # URL
-  arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    : "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
-  inspire-hep      : # URL
-  impactstory      : # URL
-  orcid            : "https://orcid.org/yourorcidurl"
-  semantic         : # URL
-  ssrn             : # URL
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  researchgate     : # URL
-  scopus           : # URL
-  zotero           : # URL
+# This is the default image that is used in the meta tags
+#avatar: assets/images/avatar.png
 
+# This text is shown in the footer of the website
+# The default is " Powered by Jekyll and academicpages"
+not_powered_by: false
 
-  # Repositories and software development
-  bitbucket        : # Username - Update with your username on the site
-  codepen          : # Username
-  dribbble         : # Username
-  github           : "academicpages"
-  kaggle           : # Username  
-  stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
+# This is the repository that the website is hosted on
+repository: dislagen/LJT-Homepage
+# This is the URL that is used to generate the sitemap
+url: "https://dislagen.github.io"
+# This is the baseurl that is used to generate the sitemap
+baseurl: "/LJT-Homepage"
 
-  # Social media
-  artstation       : # Username
-  bluesky          : "bsky.app" # Replace this with you Bluesky username
-  facebook         : # Username
-  flickr           : # Username
-  foursquare       : # Username
-  goodreads        : # Username
-  google_plus      : # Username
-  keybase          : # Username
-  instagram        : # Username
-  lastfm           : # Username
-  linkedin         : # Username
-  mastodon         : # URL
-  medium           : # URL
-  pinterest        : # Username
-  soundcloud       : # Username
-  steam            : # Username
-  telegram         : # URL
-  tumblr           : # Username
-  twitter          : # Username for X / Twitter
-  vine             : # Username
-  weibo            : # Username
-  wikipedia        : # Username
-  xing             : # Username
-  youtube          : # Username
-  zhihu            : # Username
-
-# Publication Category - The following the list of publication categories and their headings
-publication_category:
-  books:
-    title: 'Books'
-  manuscripts:
-    title: 'Journal Articles'    
-  conferences:
-    title: 'Conference Papers'
-
-# Site Settings
-teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews
-breadcrumbs              : false # true, false (default)
-words_per_minute         : 160
-future                   : true
-read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
-talkmap_link             : false      #change to true to add link to talkmap on talks page
-comments:
-  provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
-  disqus:
-    shortname            :
-  discourse:
-    server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
-  facebook:
-    appid                :
-    num_posts            : # 5 (default)
-    colorscheme          : # "light" (default), "dark"
-staticman:
-  allowedFields          : ['name', 'email', 'url', 'message']
-  branch                 : "gh-pages" # "master", "gh-pages"
-  commitMessage          : "New comment."
-  filename               : comment-{@timestamp}
-  format                 : "yml"
-  moderation             : true
-  path                   : "_data/comments/{options.slug}"
-  requiredFields         : ['name', 'email', 'message']
-  transforms:
-    email                : "md5"
-  generatedFields:
-    date:
-      type               : "date"
-      options:
-        format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
-atom_feed:
-  hide                   : false     # change to true to hide the RSS feed in the footer
-  path                   : # blank (default) uses feed.xml
-
-
-# SEO Related
-google_site_verification :
-bing_site_verification   :
-alexa_site_verification  :
-yandex_site_verification :
-
-
-# Social Sharing
-twitter:
-  username               : &twitter
-facebook:
-  username               :
-  app_id                 :
-  publisher              :
-og_image                 :  # Social media default site image
-og_description           :  # Social media default site image description
-# For specifying social profiles
-# - https://developers.google.com/structured-data/customize/social-profiles
-social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
-  links: # An array of links to social media profiles
-
+# This is the default image that is used in the meta tags
+avatar: assets/images/avatar.png
 
 # Analytics
 analytics:
-  provider               :  "false" # false (default), "google", "google-universal", "google-analytics-4", "custom"
+  # The provider is the service that is used to track the visitors
+  provider: false
+  # Google Analytics
   google:
-    tracking_id          :
+  #  tracking_id:  # The tracking ID is the ID of the Google Analytics account
+  #  anonymize_ip: false
+  #  site_speed_sample_rate: 0
+  #  site_hit_sample_rate: 0
 
+  # GetAnalytics
+  # getanalytics:
+  #  token:  # The token is the token of the GetAnalytics account
 
-# Reading Files
-include:
-  - .htaccess
-  - _pages
-  - files
-exclude:
-  - "*.sublime-project"
-  - "*.sublime-workspace"
-  - .asset-cache
-  - .bundle
-  - .github
-  - .jekyll-assets-cache
-  - .sass-cache
-  - assets/js/_main.js
-  - assets/js/plugins
-  - assets/js/vendor
-  - CHANGELOG
-  - Capfile
-  - config
-  - Dockerfile
-  - Gemfile
-  - Gruntfile.js
-  - gulpfile.js
-  - LICENSE
-  - local
-  - log
-  - node_modules
-  - package.json*
-  - Rakefile
-  - README
-  - tmp
-  - vendor
-keep_files:
-  - .git
-  - .svn
-encoding: "utf-8"
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+  # Matomo
+  # matomo:
+  #  token:  # The token is the token of the Matomo account
 
+  # Plausible
+  # plausible:
+  #  token:  # The token is the token of the Plausible account
 
-# Conversion
-markdown: kramdown
-highlighter: rouge
-lsi: false
-excerpt_separator: "\n\n"
-incremental: false
+# Twitter
+twitter:
+  # The username is the username of the Twitter account
+  username: junteng88716710
+  # The image is the image that is used in the Twitter meta tags
+  #image: assets/images/avatar.png
+  # The description is the description that is used in the Twitter meta tags
+  #description: A (free) personal website theme for a academic/technical personal portfolio, built with Jekyll
 
+# Open Graph
+og_image:
+  # The path is the path to the image in the assets/images/ directory
+  path: assets/images/avatar.png
+  # The height is the height of the image
+  height: 150
+  # The width is the width of the image
+  width: 150
+  # The version is the version of the image
+  version: 1
 
-# Markdown Processing
-kramdown:
-  input: GFM
-  hard_wrap: false
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  smart_quotes: lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false
+# Site Author
+# The `author` block is used to configure the author of the website
+author:
+  # The `name` is the name of the author
+  name: "Junteng Liu"
+  # The `avatar` is the path to the avatar in the assets/images/ directory
+  avatar: "assets/images/avatar.png"
+  # The `bio` is the bio of the author
+  bio: "First-year PhD candidate at HKUST NLP Group."
+  # The `location` is the location of the author
+  location: "Hong Kong"
+  # The `links` are the links that are displayed in the author profile
+  # The links are displayed in the order that they are listed
+  # The links are:
+  #  - email
+  #  - github
+  #  - scholar
+  #  - x (Twitter)
+  links:
+    email: "jliugi@connect.ust.hk"
+    github: "https://github.com/Vicent0205"
+    scholar: "https://scholar.google.com/citations?hl=en&user=tbK9jl4AAAAJ&view_op=list_works&sortby=pubdate"
+    x: "https://x.com/junteng88716710"
 
+# Behavioral settings
+# The `locale` is the locale of the website
+locale: en-US
+# The `date_format` is the format that is used to display the date
+date_format: "%B %d, %Y"
+# The `breadcrumbs` is used to enable or disable the breadcrumbs
+breadcrumbs: false
+# The `post_nav` is used to enable or disable the post navigation
+post_nav: true
+# The `touch_font_size` is the font size that is used on touch devices
+touch_font_size: 16
+# The `read_time` is used to enable or disable the read time
+read_time: false
+# The `words_per_minute` is the number of words per minute that is used to calculate the read time
+words_per_minute: 200
+# The `comments` is used to enable or disable the comments
+comments: false
+# The `reCaptcha` is used to configure the reCaptcha
+reCaptcha:
+  siteKey:
+  secretKey:
+# The `atom_feed` is used to configure the Atom feed
+atom_feed:
+  path: false
+# The `search` is used to enable or disable the search
+search: true
+# The `search_content` is used to configure the search content
+search_content: "full"
+# The `override_title` is used to override the title of the page
+override_title: false
+# The `override_title_text` is used to override the title of the page with the text
+override_title_text: ""
+# The `tag_grid` is used to enable or disable the tag grid
+tag_grid: false
+# The `category_grid` is used to enable or disable the category grid
+category_grid: false
+# The `feature_tag` is used to feature the tags
+feature_tag:
+  -
+  -
+  -
+  -
+  -
 
-# These settings control the types of collections used by the template
+# Style settings
+# The `hair_color` is the color of the hair
+hair_color:
+# The `hair_cut` is the cut of the hair
+hair_cut:
+# The `fluid_images` is used to enable or disable the fluid images
+fluid_images: true
+# The `attrs` is used to configure the attributes
+attrs:
+  # The `seo_programming` is used to enable or disable the SEO programming
+  seo_programming: true
+  # The `seo_maximage` is used to enable or disable the SEO max image
+  seo_maximage: true
+  # The `repaired_for` is used to repair the attributes for the browsers
+  repaired_for:
+    -
+    -
+    -
+    -
+    -
+    -
+
+# Reading
+# The `quote_color` is the color of the quote
+quote_color: rgba(0, 0, 0, 0.1)
+
+# Paragraph
+# The `paragraph` is used to configure the paragraph
+paragraph:
+  # The `type` is the type of the paragraph
+  type: classic
+  # The `first_mult` is the multiplier of the first letter
+  first_mult: 1
+  # The `drop_cap` is used to enable or disable the drop cap
+  drop_cap: false
+
+# List
+# The `list` is used to configure the list
+list:
+  # The `type` is the type of the list
+  type: default
+  # The `style` is the style of the list
+  style: inline
+
+# Table
+# The `table` is used to configure the table
+table:
+  # The `type` is the type of the table
+  type: default
+
+# Buttons
+# The `buttons` is used to configure the buttons
+buttons:
+  # The `type` is the type of the buttons
+  type: bordered
+
+# Not capture
+# The `not_capture` is used to configure the not capture
+not_capture:
+  # The `type` is the type of the not capture
+  type: default
+
+# Syntax highlighting
+# The `syntax_highlighter` is used to configure the syntax highlighting
+syntax_highlighter:
+  # The `type` is the type of the syntax highlighting
+  type: default
+
+# Collections
+# The `collections` are the collections that are used in the website
 collections:
-  teaching:
-    output: true
-    permalink: /:collection/:path/
+  # The `publications` collection is used to store the publications
   publications:
     output: true
-    permalink: /:collection/:path/
-  portfolio:
-    output: true
-    permalink: /:collection/:path/
+    sort_by: date
+  # The `talks` collection is used to store the talks
   talks:
     output: true
-    permalink: /:collection/:path/
+    sort_by: date
+  # The `teaching` collection is used to store the teaching
+  teaching:
+    output: true
+    sort_by: semester
+  # The `portfolio` collection is used to store the portfolio
+  portfolio:
+    output: true
+    sort_by: order
 
-
-# These settings control how pages and collections are included in the site
+# Defaults
+# The `defaults` are the default values that are used in the website
 defaults:
   # _posts
   - scope:
@@ -243,119 +247,758 @@ defaults:
       type: posts
     values:
       layout: single
-      author_profile: true
       read_time: true
-      comments: true
+      comments: false
       share: true
       related: true
+      show_author_profile: false
   # _pages
   - scope:
-      path: ""
+      path: "_pages"
       type: pages
     values:
       layout: single
-      author_profile: true
-  # _teaching
-  - scope:
-      path: ""
-      type: teaching
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comments: true
+      sitemap: false
   # _publications
   - scope:
       path: ""
       type: publications
     values:
-      layout: single
-      author_profile: true
-      share: true
-      comments: true
-  # _portfolio
-  - scope:
-      path: ""
-      type: portfolio
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comment: true
+      layout: paper
+      sitemap: false
   # _talks
   - scope:
       path: ""
       type: talks
     values:
       layout: talk
-      author_profile: true
-      share: true
+      sitemap: false
+  # _teaching
+  - scope:
+      path: ""
+      type: teaching
+    values:
+      layout: teaching
+      sitemap: false
+  # _portfolio
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      layout: portfolio
+      sitemap: false
 
-
-# Sass/SCSS
+# Styling
+# The `sass` is used to configure the Sass
 sass:
+  # The `style` is the style of the Sass
+  style: compressed
+  # The `sass_dir` is the directory of the Sass
   sass_dir: _sass
-  style: compressed # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
 
-
-# Outputting
-permalink: /:categories/:title/
-# paginate: 5 # amount of posts to show
-# paginate_path: /page:num/
-timezone: Etc/UTC # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-
+# The `compress_html` is used to configure the compression of the HTML
+compress_html:
+  # The `clippings` are the clippings that are used to compress the HTML
+  clippings: all
+  # The `comments` are the comments that are used to compress the HTML
+  comments: ["<!-- ", " -->"]
+  # The `ignores` are the ignores that are used to compress the HTML
+  ignores:
+  # The `blanklines` is used to enable or disable the blank lines
+  blanklines: false
+  # The `startings` are the startings that are used to compress the HTML
+  startings: [html, head, body]
 
 # Plugins
+# The `plugins` are the plugins that are used in the website
 plugins:
-  - jekyll-feed
-  - jekyll-gist
   - jekyll-paginate
   - jekyll-sitemap
-  - jekyll-redirect-from
-  - jemoji
-
-# Mimic GitHub Pages with --safe
-whitelist:
   - jekyll-feed
-  - jekyll-gist
-  - jekyll-paginate
-  - jekyll-sitemap
   - jekyll-redirect-from
-  - jemoji
+  - jekyll-seo-tag
+  - jekyll-gist
 
+# Permalinks
+# The `permalink` is the permalink that is used in the website
+permalink: /:categories/:title/
+# The `paginate` is the number of posts that are displayed per page
+paginate: 5
+# The `paginate_path` is the path that is used to paginate the posts
+paginate_path: /blog/page:num
 
-# Archives
-#  Type
-#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
-#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
-#  Path (examples)
-#  - Archive page should exist at path when using Liquid method or you can
-#    expect broken links (especially with breadcrumbs enabled)
-#  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
-#  - <base_path/categories/my-awesome-category/index.html ~> path: /categories/
-#  - <base_path/my-awesome-category/index.html ~> path: /
+# The `category_archive` is used to configure the category archive
 category_archive:
+  # The `type` is the type of the category archive
   type: liquid
-  path: /categories/
+  # The `path` is the path of the category archive
+  path: categories/
+# The `tag_archive` is used to configure the tag archive
 tag_archive:
+  # The `type` is the type of the tag archive
   type: liquid
-  path: /tags/
-# https://github.com/jekyll/jekyll-archives
-# jekyll-archives:
-#   enabled:
-#     - categories
-#     - tags
-#   layouts:
-#     category: archive-taxonomy
-#     tag: archive-taxonomy
-#   permalinks:
-#     category: /categories/:name/
-#     tag: /tags/:name/
+  # The `path` is the path of the tag archive
+  path: tags/
+# The `episode_archive` is used to configure the episode archive
+episode_archive:
+  # The `type` is the type of the episode archive
+  type: liquid
+  # The `path` is the path of the episode archive
+  path: episodes/
 
+# The `fonts` are the fonts that are used in the website
+fonts:
+  # The `unifraktur` is the unifraktur font
+  - unifraktur
 
-# HTML Compression
-# - https://jch.penibelst.de/
-compress_html:
-  clippings: all
-  ignore:
-    envs: development
+# The `module` is used to configure the module
+module:
+  # The `air_mode` is used to enable or disable the air mode
+  air_mode: false
+
+# The `vor(service)` is used to configure the vor(service)
+vor(service):
+  # The `btn-creator` is used to enable or disable the btn-creator
+  btn-creator: false
+
+# Jekyll
+# The `markdown` is the markdown engine that is used in the website
+markdown: kramdown
+# The `highlighter` is the highlighter that is used in the website
+highlighter: rouge
+# The `kramdown` is used to configure the kramdown
+kramdown:
+  # The `input` is the input of the kramdown
+  input: GFM
+  # The `syntax_highlighter` is the syntax highlighter of the kramdown
+  syntax_highlighter: rouge
+  # The `syntax_highlighter_opts` is the syntax highlighter options of the kramdown
+  syntax_highlighter_opts:
+    # The `disable` is used to disable the syntax highlighter
+    disable: false
+    # The `span` is the span of the syntax highlighter
+    span:
+      # The `line_numbers` is used to enable or disable the line numbers
+      line_numbers: false
+    # The `block` is the block of the syntax highlighter
+    block:
+      # The `line_numbers` is used to enable or disable the line numbers
+      line_numbers: false
+
+# The `asset_bundling` is used to configure the asset bundling
+asset_bundling:
+  # The `enabled` is used to enable or disable the asset bundling
+  enabled: true
+  # The `css` is used to configure the CSS
+  css:
+    # The `sass` is used to enable or disable the sass
+    sass: true
+    # The `minify` is used to enable or disable the minify
+    minify: true
+  # The `js` is used to configure the JS
+  js:
+    # The `minify` is used to enable or disable the minify
+    minify: true
+
+# The `google_cse` is used to configure the Google CSE
+google_cse:
+  # The `enabled` is used to enable or disable the Google CSE
+  enabled: false
+  # The `cse_id` is the ID of the Google CSE
+  cse_id: 000000000000000000000:abcdefghijk
+
+# The `search_history` is used to configure the search history
+search_history:
+  # The `max_per_run` is the maximum number of searches that are stored per run
+  max_per_run: 5
+  # The `max_per_page` is the maximum number of searches that are displayed per page
+  max_per_page: 10
+
+# The `post_search` is used to configure the post search
+post_search:
+  # The `search_related` is used to enable or disable the search related
+  search_related: false
+  # The `search_appendix` is used to enable or disable the search appendix
+  search_appendix: false
+
+# The `user_example` is used to configure the user example
+user_example:
+  # The `enabled` is used to enable or disable the user example
+  enabled: false
+
+# The `header_attachments` is used to configure the header attachments
+header_attachments:
+  # The `enabled` is used to enable or disable the header attachments
+  enabled: false
+
+# The `versioning` is used to configure the versioning
+versioning:
+  # The `enabled` is used to enable or disable the versioning
+  enabled: false
+
+# The `utterances` is used to configure the utterances
+utterances:
+  # The `enabled` is used to enable or disable the utterances
+  enabled: false
+  # The `repo` is the repository of the utterances
+  repo: yourusername/yourusername.github.io
+  # The `issue_term` is the issue term of the utterances
+  issue_term: pathname
+  # The `label` is the label of the utterances
+  label: utterances
+
+# The `giscus` is used to configure the giscus
+giscus:
+  # The `enabled` is used to enable or disable the giscus
+  enabled: false
+  # The `repo` is the repository of the giscus
+  repo: yourusername/yourusername.github.io
+  # The `repo_id` is the repository ID of the giscus
+  repo_id: MFC_kwDOGpQ5Hs
+  # The `category_id` is the category ID of the giscus
+  category_id: DIC_kwDOGp5Hs4CP8kR
+  # The `category` is the category of the giscus
+  category: Announcements
+  # The `mapping` is the mapping of the giscus
+  mapping: pathname
+  # The `reactions_enabled` is used to enable or disable the reactions
+  reactions_enabled: 1
+  # The `metadata_inputs` is used to enable or disable the metadata inputs
+  metadata_inputs: 0
+  # The `theme` is the theme of the giscus
+  theme: light
+  # The `lang` is the lang of the giscus
+  lang: en
+
+# The `cookie` is used to configure the cookie
+cookie:
+  # The `enabled` is used to enable or disable the cookie
+  enabled: false
+  # The `expiry` is the expiry of the cookie
+  expiry: 30
+
+# The `terms` is used to configure the terms
+terms:
+  # The `enabled` is used to enable or disable the terms
+  enabled: false
+
+# The `skip` is used to configure the skip
+skip:
+  # The `enabled` is used to enable or disable the skip
+  enabled: false
+
+# The `auto_page` is used to configure the auto page
+auto_page:
+  # The `enabled` is used to enable or disable the auto page
+  enabled: false
+
+# The `pages` is used to configure the pages
+pages:
+  # The `enabled` is used to enable or disable the pages
+  enabled: false
+
+# The `debug` is used to configure the debug
+debug:
+  # The `enabled` is used to enable or disable the debug
+  enabled: false
+
+# The `performance` is used to configure the performance
+performance:
+  # The `enabled` is used to enable or disable the performance
+  enabled: false
+
+# The `syntax` is used to configure the syntax
+syntax:
+  # The `enabled` is used to enable or disable the syntax
+  enabled: false
+
+# The `hooks` is used to configure the hooks
+hooks:
+  # The `enabled` is used to enable or disable the hooks
+  enabled: false
+
+# The `liquid_note` is used to configure the liquid note
+liquid_note:
+  # The `enabled` is used to enable or disable the liquid note
+  enabled: false
+
+# The `repos` is used to configure the repos
+repos:
+  # The `enabled` is used to enable or disable the repos
+  enabled: false
+
+# The `profiles` is used to configure the profiles
+profiles:
+  # The `enabled` is used to enable or disable the profiles
+  enabled: false
+
+# The `newsletter` is used to configure the newsletter
+newsletter:
+  # The `enabled` is used to enable or disable the newsletter
+  enabled: false
+
+# The `resume` is used to configure the resume
+resume:
+  # The `enabled` is used to enable or disable the resume
+  enabled: false
+
+# The `comments` is used to configure the comments
+comments:
+  # The `enabled` is used to enable or disable the comments
+  enabled: false
+
+# The `footer` is used to configure the footer
+footer:
+  # The `enabled` is used to enable or disable the footer
+  enabled: false
+
+# The `analytics` is used to configure the analytics
+analytics:
+  # The `enabled` is used to enable or disable the analytics
+  enabled: false
+
+# The `webmaster_verifications` is used to configure the webmaster verifications
+webmaster_verifications:
+  # The `enabled` is used to enable or disable the webmaster verifications
+  enabled: false
+
+# The `reading_time` is used to configure the reading time
+reading_time:
+  # The `enabled` is used to enable or disable the reading time
+  enabled: false
+
+# The `words_per_minute` is used to configure the words per minute
+words_per_minute:
+  # The `enabled` is used to enable or disable the words per minute
+  enabled: false
+
+# The `category_list` is used to configure the category list
+category_list:
+  # The `enabled` is used to enable or disable the category list
+  enabled: false
+
+# The `tag_list` is used to configure the tag list
+tag_list:
+  # The `enabled` is used to enable or disable the tag list
+  enabled: false
+
+# The `tag_cloud` is used to configure the tag cloud
+tag_cloud:
+  # The `enabled` is used to enable or disable the tag cloud
+  enabled: false
+
+# The `category_cloud` is used to configure the category cloud
+category_cloud:
+  # The `enabled` is used to enable or disable the category cloud
+  enabled: false
+
+# The `sitemap` is used to configure the sitemap
+sitemap:
+  # The `enabled` is used to enable or disable the sitemap
+  enabled: false
+
+# The `robots` is used to configure the robots
+robots:
+  # The `enabled` is used to enable or disable the robots
+  enabled: false
+
+# The `feed` is used to configure the feed
+feed:
+  # The `enabled` is used to enable or disable the feed
+  enabled: false
+
+# The `minima` is used to configure the minima
+minima:
+  # The `enabled` is used to enable or disable the minima
+  enabled: false
+
+# The `avatar` is used to configure the avatar
+avatar:
+  # The `enabled` is used to enable or disable the avatar
+  enabled: false
+
+# The `logo` is used to configure the logo
+logo:
+  # The `enabled` is used to enable or disable the logo
+  enabled: false
+
+# The `social` is used to configure the social
+social:
+  # The `enabled` is used to enable or disable the social
+  enabled: false
+
+# The `author` is used to configure the author
+author:
+  # The `enabled` is used to enable or disable the author
+  enabled: false
+
+# The `sidebar` is used to configure the sidebar
+sidebar:
+  # The `enabled` is used to enable or disable the sidebar
+  enabled: false
+
+# The `breadcrumbs` is used to configure the breadcrumbs
+breadcrumbs:
+  # The `enabled` is used to enable or disable the breadcrumbs
+  enabled: false
+
+# The `pagination` is used to configure the pagination
+pagination:
+  # The `enabled` is used to enable or disable the pagination
+  enabled: false
+
+# The `excerpt` is used to configure the excerpt
+excerpt:
+  # The `enabled` is used to enable or disable the excerpt
+  enabled: false
+
+# The `read_more` is used to configure the read more
+read_more:
+  # The `enabled` is used to enable or disable the read more
+  enabled: false
+
+# The `excerpt_separator` is used to configure the excerpt separator
+excerpt_separator: "\n\n"
+
+# The `open_graph` is used to configure the open graph
+open_graph:
+  # The `enabled` is used to enable or disable the open graph
+  enabled: false
+
+# The `twitter` is used to configure the twitter
+twitter:
+  # The `enabled` is used to enable or disable the twitter
+  enabled: false
+
+# The `facebook` is used to configure the facebook
+facebook:
+  # The `enabled` is used to enable or disable the facebook
+  enabled: false
+
+# The `google_plus` is used to configure the google plus
+google_plus:
+  # The `enabled` is used to enable or disable the google plus
+  enabled: false
+
+# The `linkedin` is used to configure the linkedin
+linkedin:
+  # The `enabled` is used to enable or disable the linkedin
+  enabled: false
+
+# The `pinterest` is used to configure the pinterest
+pinterest:
+  # The `enabled` is used to enable or disable the pinterest
+  enabled: false
+
+# The `tumblr` is used to configure the tumblr
+tumblr:
+  # The `enabled` is used to enable or disable the tumblr
+  enabled: false
+
+# The `yaml` is used to configure the yaml
+yaml:
+  # The `enabled` is used to enable or disable the yaml
+  enabled: false
+
+# The `json` is used to configure the json
+json:
+  # The `enabled` is used to enable or disable the json
+  enabled: false
+
+# The `csv` is used to configure the csv
+csv:
+  # The `enabled` is used to enable or disable the csv
+  enabled: false
+
+# The `xml` is used to configure the xml
+xml:
+  # The `enabled` is used to enable or disable the xml
+  enabled: false
+
+# The `html` is used to configure the html
+html:
+  # The `enabled` is used to enable or disable the html
+  enabled: false
+
+# The `css` is used to configure the css
+css:
+  # The `enabled` is used to enable or disable the css
+  enabled: false
+
+# The `js` is used to configure the js
+js:
+  # The `enabled` is used to enable or disable the js
+  enabled: false
+
+# The `images` is used to configure the images
+images:
+  # The `enabled` is used to enable or disable the images
+  enabled: false
+
+# The `fonts` is used to configure the fonts
+fonts:
+  # The `enabled` is used to enable or disable the fonts
+  enabled: false
+
+# The `videos` is used to configure the videos
+videos:
+  # The `enabled` is used to enable or disable the videos
+  enabled: false
+
+# The `audios` is used to configure the audios
+audios:
+  # The `enabled` is used to enable or disable the audios
+  enabled: false
+
+# The `documents` is used to configure the documents
+documents:
+  # The `enabled` is used to enable or disable the documents
+  enabled: false
+
+# The `archives` is used to configure the archives
+archives:
+  # The `enabled` is used to enable or disable the archives
+  enabled: false
+
+# The `categories` is used to configure the categories
+categories:
+  # The `enabled` is used to enable or disable the categories
+  enabled: false
+
+# The `tags` is used to configure the tags
+tags:
+  # The `enabled` is used to enable or disable the tags
+  enabled: false
+
+# The `pages` is used to configure the pages
+pages:
+  # The `enabled` is used to enable or disable the pages
+  enabled: false
+
+# The `posts` is used to configure the posts
+posts:
+  # The `enabled` is used to enable or disable the posts
+  enabled: false
+
+# The `sitename` is used to configure the sitename
+sitename:
+  # The `enabled` is used to enable or disable the sitename
+  enabled: false
+
+# The `tagline` is used to configure the tagline
+tagline:
+  # The `enabled` is used to enable or disable the tagline
+  enabled: false
+
+# The `description` is used to configure the description
+description:
+  # The `enabled` is used to enable or disable the description
+  enabled: false
+
+# The `keywords` is used to configure the keywords
+keywords:
+  # The `enabled` is used to enable or disable the keywords
+  enabled: false
+
+# The `author` is used to configure the author
+author:
+  # The `enabled` is used to enable or disable the author
+  enabled: false
+
+# The `email` is used to configure the email
+email:
+  # The `enabled` is used to enable or disable the email
+  enabled: false
+
+# The `location` is used to configure the location
+location:
+  # The `enabled` is used to enable or disable the location
+  enabled: false
+
+# The `bio` is used to configure the bio
+bio:
+  # The `enabled` is used to enable or disable the bio
+  enabled: false
+
+# The `avatar` is used to configure the avatar
+avatar:
+  # The `enabled` is used to enable or disable the avatar
+  enabled: false
+
+# The `links` is used to configure the links
+links:
+  # The `enabled` is used to enable or disable the links
+  enabled: false
+
+# The `social_links` is used to configure the social links
+social_links:
+  # The `enabled` is used to enable or disable the social links
+  enabled: false
+
+# The `footer_links` is used to configure the footer links
+footer_links:
+  # The `enabled` is used to enable or disable the footer links
+  enabled: false
+
+# The `menu` is used to configure the menu
+menu:
+  # The `enabled` is used to enable or disable the menu
+  enabled: false
+
+# The `navbar` is used to configure the navbar
+navbar:
+  # The `enabled` is used to enable or disable the navbar
+  enabled: false
+
+# The `footer` is used to configure the footer
+footer:
+  # The `enabled` is used to enable or disable the footer
+  enabled: false
+
+# The `header` is used to configure the header
+header:
+  # The `enabled` is used to enable or disable the header
+  enabled: false
+
+# The `main` is used to configure the main
+main:
+  # The `enabled` is used to enable or disable the main
+  enabled: false
+
+# The `content` is used to configure the content
+content:
+  # The `enabled` is used to enable or disable the content
+  enabled: false
+
+# The `sidebar` is used to configure the sidebar
+sidebar:
+  # The `enabled` is used to enable or disable the sidebar
+  enabled: false
+
+# The `widgets` is used to configure the widgets
+widgets:
+  # The `enabled` is used to enable or disable the widgets
+  enabled: false
+
+# The `plugins` is used to configure the plugins
+plugins:
+  # The `enabled` is used to enable or disable the plugins
+  enabled: false
+
+# The `themes` is used to configure the themes
+themes:
+  # The `enabled` is used to enable or disable the themes
+  enabled: false
+
+# The `gem` is used to configure the gem
+gem:
+  # The `enabled` is used to enable or disable the gem
+  enabled: false
+
+# The `bundle` is used to configure the bundle
+bundle:
+  # The `enabled` is used to enable or disable the bundle
+  enabled: false
+
+# The `jekyll` is used to configure the jekyll
+jekyll:
+  # The `enabled` is used to enable or disable the jekyll
+  enabled: false
+
+# The `liquid` is used to configure the liquid
+liquid:
+  # The `enabled` is used to enable or disable the liquid
+  enabled: false
+
+# The `html` is used to configure the html
+html:
+  # The `enabled` is used to enable or disable the html
+  enabled: false
+
+# The `css` is used to configure the css
+css:
+  # The `enabled` is used to enable or disable the css
+  enabled: false
+
+# The `js` is used to configure the js
+js:
+  # The `enabled` is used to enable or disable the js
+  enabled: false
+
+# The `images` is used to configure the images
+images:
+  # The `enabled` is used to enable or disable the images
+  enabled: false
+
+# The `fonts` is used to configure the fonts
+fonts:
+  # The `enabled` is used to enable or disable the fonts
+  enabled: false
+
+# The `videos` is used to configure the videos
+videos:
+  # The `enabled` is used to enable or disable the videos
+  enabled: false
+
+# The `audios` is used to configure the audios
+audios:
+  # The `enabled` is used to enable or disable the audios
+  enabled: false
+
+# The `documents` is used to configure the documents
+documents:
+  # The `enabled` is used to enable or disable the documents
+  enabled: false
+
+# The `archives` is used to configure the archives
+archives:
+  # The `enabled` is used to enable or disable the archives
+  enabled: false
+
+# The `categories` is used to configure the categories
+categories:
+  # The `enabled` is used to enable or disable the categories
+  enabled: false
+
+# The `tags` is used to configure the tags
+tags:
+  # The `enabled` is used to enable or disable the tags
+  enabled: false
+
+# The `pages` is used to configure the pages
+pages:
+  # The `enabled` is used to enable or disable the pages
+  enabled: false
+
+# The `posts` is used to configure the posts
+posts:
+  # The `enabled` is used to enable or disable the posts
+  enabled: false
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - package.json
+  - package-lock.json
+  - talkmap.ipynb
+  - talkmap_out.ipynb
+  - talkmap.py
+  - talkmap/
+  - scripts/
+  - markdown_generator/
